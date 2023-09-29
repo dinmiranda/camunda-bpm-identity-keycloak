@@ -14,7 +14,7 @@ RUN ["jlink", "--compress=2", \
      "--output", "/jlinked"]
 
 # final custom slim java image (for apk command see jdk-11.0.9_11-alpine-slim)
-FROM alpine:3.12
+FROM alpine:3.18.4
 RUN apk add --no-cache tzdata --virtual .build-deps curl binutils zstd \
     && GLIBC_VER="2.31-r0" \
     && ALPINE_GLIBC_REPO="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" \
